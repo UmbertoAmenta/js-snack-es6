@@ -27,14 +27,19 @@ const teams = [
     }
 ]
 
-let warnings = []
 for (let i = 0; i < teams.length; i++) {
-    teams[i].pointsScored = getRndInteger(0,10)
-    teams[i].foulsSuffered = getRndInteger(0,30)
+    const team = teams[i]
+    team.pointsScored = getRndInteger(0,10)
+    team.foulsSuffered = getRndInteger(0,30)
 }
-for (let i = 0; i < teams.length; i++) {
-    warnings += `(${teams[i].name} ${teams[i].foulsSuffered}) `
 
+const warnings = []
+for (let i = 0; i < teams.length; i++) {
+    const team = teams [i]
+    warnings.push({
+        name: team.name,
+        foulsSuffered: team.foulsSuffered,
+    })
 }
 
 console.log(teams)
