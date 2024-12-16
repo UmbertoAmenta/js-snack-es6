@@ -24,16 +24,26 @@ const bikes = [
 
 
 
-const allWeight = []
-for (let i = 0; i < bikes.length; i++) {
-    allWeight.push(bikes[i].weight_kg)
-}
-console.log(allWeight)
+// const allWeight = []
+// for (let i = 0; i < bikes.length; i++) {
+//     allWeight.push(bikes[i].weight_kg)
+// }
+// console.log(allWeight)
 
-let lowerWeight = allWeight[0]
+// let lowerWeight = allWeight[0]
+// for (let i = 1; i < bikes.length; i++) {
+//     if (allWeight[i] < lowerWeight) {
+//         lowerWeight = allWeight[i]
+//     }
+// }
+// console.log(lowerWeight)
+
+
+/* Alternativa più comoda */
+let lighterBike = bikes[0]
 for (let i = 1; i < bikes.length; i++) {
-    if (allWeight[i] < lowerWeight) {
-        lowerWeight = allWeight[i]
+    if (bikes[i].weight_kg < lighterBike.weight_kg) {
+        lighterBike.weight_kg = bikes[i].weight_kg
     }
 }
-console.log(lowerWeight)
+console.log(lighterBike)
