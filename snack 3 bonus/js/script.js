@@ -7,37 +7,37 @@ function getRndInteger(min, max) {
 }
 
 
-const numbersExample = []
-for (let i = 1; i <= 10; i++) {
-    numbersExample.push(i)
+const arrayExample = []
+for (let i = 1; i <= 20; i++) {
+    arrayExample.push(i)
 }
-console.log(numbersExample)
+console.log(arrayExample)
 
 
-let minExample = getRndInteger(1,5)
-let maxExample = getRndInteger(6,10)
+let aExample = getRndInteger(1,5)
+let bExample = getRndInteger(6,arrayExample.length-1)
 
 
 
 
 
 /**
- * Determine the numbers in an array between two extremes
- * @param {array} numbers - Array of numbers to filter
- * @param {number} min - mininum value (inclused)
- * @param {number} max - maximum value (inclused)
- * @returns {array} new array containing numbers included
+ * Determine the elements in an array between two index
+ * @param {array} array - Array to filter
+ * @param {number} a - mininum index (inclused)
+ * @param {number} b - maximum index (inclused)
+ * @returns {array} new array containing elements included
  */
-function getMiddleValues(numbers, min, max) {
+function getMiddleValues(array, a, b) {
     let middleValues = []
-    for (let i = 0; i < numbers.length; i++) {
-        if ( numbers[i] >= min && numbers[i] <= max) {
-            middleValues.push(numbers[i])
+    for (let i = 0; i < array.length; i++) {
+        if ( array[i]-1 >= a && array[i]-1 <= b) {
+            middleValues.push(array[i])
         }
     }
     return middleValues
 }
 
-console.log(minExample, maxExample)
-let example = getMiddleValues(numbersExample, minExample, maxExample)
+console.log(aExample, bExample)
+let example = getMiddleValues(arrayExample, aExample, bExample)
 console.log(example)
